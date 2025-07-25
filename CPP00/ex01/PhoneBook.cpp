@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student          #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student         ###   ########.fr       */
+/*   Created: 2025/07/25 16:01:19 by slangero          #+#    #+#             */
+/*   Updated: 2025/07/25 16:01:19 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,13 +112,11 @@ void PhoneBook::searchContacts() const
         return;
     }
 
-    // Display header
     std::cout << std::setw(10) << std::right << "Index" << "|";
     std::cout << std::setw(10) << std::right << "First Name" << "|";
     std::cout << std::setw(10) << std::right << "Last Name" << "|";
     std::cout << std::setw(10) << std::right << "Nickname" << std::endl;
 
-    // Display contacts
     for (int i = 0; i < _contactCount; i++)
     {
         std::cout << std::setw(10) << std::right << i << "|";
@@ -127,12 +125,10 @@ void PhoneBook::searchContacts() const
         std::cout << std::setw(10) << std::right << _truncateString(_contacts[i].getNickname()) << std::endl;
     }
 
-    // Ask for index
     std::cout << "Enter the index of the contact to display: ";
     std::string input;
     std::getline(std::cin, input);
     
-    // Convert string to int
     std::istringstream iss(input);
     int index;
     if (!(iss >> index) || index < 0 || index >= _contactCount)

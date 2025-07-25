@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student          #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student         ###   ########.fr       */
+/*   Created: 2025/07/25 15:59:07 by slangero          #+#    #+#             */
+/*   Updated: 2025/07/25 15:59:07 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Contact::~Contact()
 {
 }
 
-// Setters
 void Contact::setFirstName(const std::string &firstName)
 {
     this->_firstName = firstName;
@@ -46,7 +45,6 @@ void Contact::setDarkestSecret(const std::string &darkestSecret)
     this->_darkestSecret = darkestSecret;
 }
 
-// Getters
 std::string Contact::getFirstName() const
 {
     return (this->_firstName);

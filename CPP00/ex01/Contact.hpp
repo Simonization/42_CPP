@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student          #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student         ###   ########.fr       */
+/*   Created: 2025/07/25 15:58:56 by slangero          #+#    #+#             */
+/*   Updated: 2025/07/25 15:58:56 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ public:
     Contact();
     ~Contact();
 
-    // Setters
     void setFirstName(const std::string &firstName);
     void setLastName(const std::string &lastName);
     void setNickname(const std::string &nickname);
     void setPhoneNumber(const std::string &phoneNumber);
     void setDarkestSecret(const std::string &darkestSecret);
 
-    // Getters
     std::string getFirstName() const;
     std::string getLastName() const;
     std::string getNickname() const;

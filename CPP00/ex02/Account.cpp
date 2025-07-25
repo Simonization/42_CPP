@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student          #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student         ###   ########.fr       */
+/*   Created: 2025/07/25 16:02:10 by slangero          #+#    #+#             */
+/*   Updated: 2025/07/25 16:02:10 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 #include <iomanip>
 #include <ctime>
 
-// Static member initialization
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-// Constructor
 Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
     _accountIndex = _nbAccounts;
@@ -34,7 +32,6 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
               << ";created" << std::endl;
 }
 
-// Destructor
 Account::~Account(void)
 {
     _displayTimestamp();
@@ -43,7 +40,6 @@ Account::~Account(void)
               << ";closed" << std::endl;
 }
 
-// Static methods
 int Account::getNbAccounts(void)
 {
     return (_nbAccounts);
@@ -73,7 +69,6 @@ void Account::displayAccountsInfos(void)
               << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-// Member methods
 void Account::makeDeposit(int deposit)
 {
     int p_amount = _amount;
