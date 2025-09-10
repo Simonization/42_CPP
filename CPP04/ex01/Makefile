@@ -1,16 +1,16 @@
-NAME = brain
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp \
-       Animal.cpp \
-       Dog.cpp \
-       Cat.cpp \
-       Brain.cpp
-OBJS = $(SRCS:.cpp=.o)
-HEADERS = Animal.hpp \
-          Dog.hpp \
-          Cat.hpp \
-          Brain.hpp
+NAME          = brain
+CXX           = c++
+CXXFLAGS      = -Wall -Wextra -Werror -std=c++98
+SRCS          = main.cpp \
+                Animal.cpp \
+                Dog.cpp \
+                Cat.cpp \
+                Brain.cpp
+OBJS          = $(SRCS:.cpp=.o)
+HEADERS       = Animal.hpp \
+                Dog.hpp \
+                Cat.hpp \
+                Brain.hpp
 
 all: $(NAME)
 
@@ -28,7 +28,6 @@ fclean: clean
 
 re: fclean all
 
-# Memory leak check (optional but useful)
 leak: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 
