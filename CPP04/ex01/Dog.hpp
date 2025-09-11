@@ -10,12 +10,12 @@ private:
     Brain* brain;
 
 public:
-    Dog();
-    Dog(const Dog& other);
-    Dog& operator=(const Dog& other);
-    virtual ~Dog();
+	Dog(void);
+	Dog(const Dog& src);
+	Dog& operator=(const Dog& other);
+	virtual ~Dog(void);
 
-    virtual void makeSound() const;
+	virtual void makeSound(void) const;;
     Brain* getBrain() const;
 };
 

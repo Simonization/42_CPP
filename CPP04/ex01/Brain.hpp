@@ -9,10 +9,10 @@ class Brain
 public:
     std::string ideas[100];
 
-    Brain();
-    Brain(const Brain& other);
+    Brain(void);
+    Brain(const Brain& src);
     Brain& operator=(const Brain& other);
-    ~Brain();
+    ~Brain(void);
 };
 
 #endif

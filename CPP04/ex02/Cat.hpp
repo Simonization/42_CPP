@@ -10,13 +10,11 @@ private:
     Brain* brain;
 
 public:
-    // Orthodox Canonical Form
     Cat(void);
-    Cat(const Cat& src);
-    Cat& operator=(const Cat& other);
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &other);
     virtual ~Cat(void);
 
-    // Member functions
     virtual void makeSound(void) const;
     Brain* getBrain(void) const;
 };

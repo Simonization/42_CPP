@@ -1,24 +1,22 @@
 #ifndef AANIMAL_HPP
 # define AANIMAL_HPP
 
-# include <string>
 # include <iostream>
+# include <string>
 
 class AAnimal
 {
 protected:
-    std::string type;
+    std::string _type;
 
 public:
-    // Orthodox Canonical Form
-    AAnimal(void);                                // Default constructor
-    AAnimal(const AAnimal& src);                  // Copy constructor
-    AAnimal& operator=(const AAnimal& other);       // Copy assignment operator
-    virtual ~AAnimal(void);                       // Virtual destructor
+    AAnimal(void);
+    AAnimal(const AAnimal& src);
+    AAnimal& operator=(const AAnimal& other);
+    virtual ~AAnimal(void);
 
-    // Member functions
-    virtual void makeSound(void) const = 0;       // Pure virtual function - makes class abstract
-    std::string getType(void) const;
+    virtual void makeSound(void) const = 0;
+    std::string get_type(void) const;
 };
 
 #endif

@@ -10,13 +10,13 @@ private:
     Brain* brain;
 
 public:
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    virtual ~Cat();
+    Cat(void);
+    Cat(const Cat &src);
+    Cat &operator=(const Cat &other);
+    virtual ~Cat(void);
 
-    virtual void makeSound() const;
-    Brain* getBrain() const;
+    virtual void makeSound(void) const;
+    Brain* getBrain(void) const;
 };
 
 #endif

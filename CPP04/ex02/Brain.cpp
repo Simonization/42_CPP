@@ -1,14 +1,12 @@
 #include "Brain.hpp"
 
-// Default constructor
 Brain::Brain(void)
 {
     std::cout << "Brain default constructor called" << std::endl;
     for (int i = 0; i < 100; i++)
-        this->ideas[i] = "";
+        this->ideas[i] = "Empty idea";
 }
 
-// Copy constructor
 Brain::Brain(const Brain& src)
 {
     std::cout << "Brain copy constructor called" << std::endl;
@@ -16,7 +14,6 @@ Brain::Brain(const Brain& src)
         this->ideas[i] = src.ideas[i];
 }
 
-// Copy assignment operator
 Brain& Brain::operator=(const Brain& other)
 {
     std::cout << "Brain copy assignment operator called" << std::endl;
@@ -28,20 +25,19 @@ Brain& Brain::operator=(const Brain& other)
     return *this;
 }
 
-// Destructor
 Brain::~Brain(void)
 {
     std::cout << "Brain destructor called" << std::endl;
 }
 
-// Set idea at index
 void Brain::setIdea(int index, const std::string& idea)
 {
     if (index >= 0 && index < 100)
         this->ideas[index] = idea;
+    else
+        std::cout << "Array of 100 ideas: out of bounds" << std::endl;
 }
 
-// Get idea at index
 std::string Brain::getIdea(int index) const
 {
     if (index >= 0 && index < 100)

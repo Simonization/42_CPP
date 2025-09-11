@@ -7,16 +7,16 @@ int main()
 {
     std::cout << "=== Testing Abstract Class ===" << std::endl;
     
-    // This line should NOT compile - AAnimal is abstract
-    // AAnimal animal;  // ERROR: Cannot instantiate abstract class
+    // Compilor Cannot instantiate abstract class
+    // AAnimal animal; 
     
     std::cout << "\n=== Creating Dog and Cat ===" << std::endl;
     const AAnimal* dog = new Dog();
     const AAnimal* cat = new Cat();
     
     std::cout << "\n=== Testing polymorphism ===" << std::endl;
-    std::cout << "Dog type: " << dog->getType() << std::endl;
-    std::cout << "Cat type: " << cat->getType() << std::endl;
+    std::cout << "Dog _type: " << dog->get_type() << std::endl;
+    std::cout << "Cat _type: " << cat->get_type() << std::endl;
     
     dog->makeSound();
     cat->makeSound();
@@ -25,7 +25,6 @@ int main()
     const int arraySize = 4;
     AAnimal* animals[arraySize];
     
-    // Create half dogs, half cats
     for (int i = 0; i < arraySize / 2; i++)
         animals[i] = new Dog();
     for (int i = arraySize / 2; i < arraySize; i++)
@@ -39,7 +38,7 @@ int main()
     Dog originalDog;
     originalDog.getBrain()->setIdea(0, "I want a bone!");
     
-    Dog copiedDog(originalDog);  // Copy constructor
+    Dog copiedDog(originalDog);
     std::cout << "Original dog's idea: " << originalDog.getBrain()->getIdea(0) << std::endl;
     std::cout << "Copied dog's idea: " << copiedDog.getBrain()->getIdea(0) << std::endl;
     

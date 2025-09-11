@@ -5,12 +5,14 @@
 
 int main()
 {
-    std::cout << "=== TEST 1: Basic test from subject ===" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "=== TEST 1: Basic test ===" << std::endl;
     {
         const Animal* j = new Dog();
         const Animal* i = new Cat();
         
-        delete j; // should not create a leak
+        delete j;
         delete i;
     }
     
@@ -68,6 +70,7 @@ int main()
             std::cout << "✓ Deep copy successful - different brain addresses!" << std::endl;
         else
             std::cout << "✗ Shallow copy detected - same brain addresses!" << std::endl;
+        std::cout << std::endl;
     }
     
     std::cout << "\n=== TEST 4: Assignment Operator Test ===" << std::endl;
@@ -95,11 +98,15 @@ int main()
         
         std::cout << "Cat1's idea: " << cat1.getBrain()->ideas[0] << std::endl;
         std::cout << "Cat2's idea: " << cat2.getBrain()->ideas[0] << std::endl;
+
+        std::cout << "\nBrain addresses:" << std::endl;
+            std::cout << "Cat1's idea: " << cat1.getBrain() << std::endl;
+        std::cout << "Cat2's idea: " << cat2.getBrain() << std::endl;
         
         if (cat1.getBrain() != cat2.getBrain())
-            std::cout << "✓ Deep copy successful - different brain addresses!" << std::endl;
+            std::cout << "✓ Deep copy successful - different brain addresses!\n" << std::endl;
         else
-            std::cout << "✗ Shallow copy detected - same brain addresses!" << std::endl;
+            std::cout << "✗ Shallow copy detected - same brain addresses!\n" << std::endl;
     }
     
     std::cout << "\n=== TEST 5: Polymorphic Deletion ===" << std::endl;

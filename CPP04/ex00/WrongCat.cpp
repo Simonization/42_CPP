@@ -3,7 +3,7 @@
 WrongCat::WrongCat(void)
 {
 	std::cout << "WrongCat default constructor called" << std::endl;
-	this->type = "WrongCat";
+	this->_type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat& src) : WrongAnimal(src)
@@ -16,7 +16,7 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
 {
 	std::cout << "WrongCat assignment operator called" << std::endl;
 	if (this != &other)
-		this->type = other.type;
+		this->_type = other._type;
 	return (*this);
 }
 

@@ -1,20 +1,3 @@
-// #ifndef ANIMAL_HPP
-// # define ANIMAL_HPP
-
-// #include <iostream>
-
-// class Animal
-// {
-// private
-// 	std::string	_type;
-// public
-	
-// 	void	makeSound(const std::string &animalSound);
-// };
-
-// #endif
-
-
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
@@ -24,7 +7,7 @@
 class Animal
 {
 protected:
-	std::string type;
+	std::string _type;
 
 public:
 	Animal(void);
@@ -33,7 +16,7 @@ public:
 	virtual ~Animal(void);
 
 	virtual void makeSound(void) const;
-	std::string getType(void) const;
+	std::string get_type(void) const;
 };
 
 #endif

@@ -1,36 +1,34 @@
 #include "AAnimal.hpp"
 
-// Default constructor
-AAnimal::AAnimal(void) : type("AAnimal")
+AAnimal::AAnimal(void) : _type("AAnimal")
 {
     std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-// Copy constructor
-AAnimal::AAnimal(const AAnimal& src) : type(src.type)
+AAnimal::AAnimal(const AAnimal& src) : _type(src._type)
 {
     std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
-// Copy assignment operator
 AAnimal& AAnimal::operator=(const AAnimal& other)
 {
     std::cout << "AAnimal copy assignment operator called" << std::endl;
     if (this != &other)
-    {
-        this->type = other.type;
-    }
+        this->_type = other._type;
     return *this;
 }
 
-// Destructor
 AAnimal::~AAnimal(void)
 {
     std::cout << "AAnimal destructor called" << std::endl;
 }
 
-// Getter for type
-std::string AAnimal::getType(void) const
+void AAnimal::makeSound(void) const
 {
-    return this->type;
+	std::cout << "What Does the Fox Say?" << std::endl;
+}
+
+std::string AAnimal::get_type(void) const
+{
+    return this->_type;
 }
