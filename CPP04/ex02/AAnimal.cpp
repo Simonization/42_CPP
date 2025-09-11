@@ -13,12 +13,12 @@ AAnimal::AAnimal(const AAnimal& src) : type(src.type)
 }
 
 // Copy assignment operator
-AAnimal& AAnimal::operator=(const AAnimal& rhs)
+AAnimal& AAnimal::operator=(const AAnimal& other)
 {
     std::cout << "AAnimal copy assignment operator called" << std::endl;
-    if (this != &rhs)
+    if (this != &other)
     {
-        this->type = rhs.type;
+        this->type = other.type;
     }
     return *this;
 }

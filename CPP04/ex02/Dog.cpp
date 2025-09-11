@@ -16,14 +16,14 @@ Dog::Dog(const Dog& src) : AAnimal(src)
 }
 
 // Copy assignment operator
-Dog& Dog::operator=(const Dog& rhs)
+Dog& Dog::operator=(const Dog& other)
 {
     std::cout << "Dog copy assignment operator called" << std::endl;
-    if (this != &rhs)
+    if (this != &other)
     {
-        AAnimal::operator=(rhs);
+        AAnimal::operator=(other);
         delete this->brain;
-        this->brain = new Brain(*rhs.brain);
+        this->brain = new Brain(*other.brain);
     }
     return *this;
 }

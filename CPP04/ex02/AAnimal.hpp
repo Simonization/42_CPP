@@ -13,7 +13,7 @@ public:
     // Orthodox Canonical Form
     AAnimal(void);                                // Default constructor
     AAnimal(const AAnimal& src);                  // Copy constructor
-    AAnimal& operator=(const AAnimal& rhs);       // Copy assignment operator
+    AAnimal& operator=(const AAnimal& other);       // Copy assignment operator
     virtual ~AAnimal(void);                       // Virtual destructor
 
     // Member functions

@@ -16,14 +16,14 @@ Cat::Cat(const Cat& src) : AAnimal(src)
 }
 
 // Copy assignment operator
-Cat& Cat::operator=(const Cat& rhs)
+Cat& Cat::operator=(const Cat& other)
 {
     std::cout << "Cat copy assignment operator called" << std::endl;
-    if (this != &rhs)
+    if (this != &other)
     {
-        AAnimal::operator=(rhs);
+        AAnimal::operator=(other);
         delete this->brain;
-        this->brain = new Brain(*rhs.brain);
+        this->brain = new Brain(*other.brain);
     }
     return *this;
 }

@@ -8,7 +8,7 @@ class WrongCat : public WrongAnimal
 public:
 	WrongCat(void);
 	WrongCat(const WrongCat& src);
-	WrongCat& operator=(const WrongCat& rhs);
+	WrongCat& operator=(const WrongCat& other);
 	~WrongCat(void);  // Note: NOT virtual
 
 	void makeSound(void) const;  // Note: NOT virtual

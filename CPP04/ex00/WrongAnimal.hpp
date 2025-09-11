@@ -12,7 +12,7 @@ protected:
 public:
 	WrongAnimal(void);
 	WrongAnimal(const WrongAnimal& src);
-	WrongAnimal& operator=(const WrongAnimal& rhs);
+	WrongAnimal& operator=(const WrongAnimal& other);
 	~WrongAnimal(void);  // Note: NOT virtual
 
 	void makeSound(void) const;  // Note: NOT virtual

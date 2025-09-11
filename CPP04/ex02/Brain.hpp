@@ -13,7 +13,7 @@ public:
     // Orthodox Canonical Form
     Brain(void);
     Brain(const Brain& src);
-    Brain& operator=(const Brain& rhs);
+    Brain& operator=(const Brain& other);
     ~Brain(void);
 
     // Member functions

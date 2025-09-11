@@ -12,11 +12,11 @@ Animal::Animal(const Animal& src)
 	*this = src;
 }
 
-Animal& Animal::operator=(const Animal& rhs)
+Animal& Animal::operator=(const Animal& other)
 {
 	std::cout << "Animal assignment operator called" << std::endl;
-	if (this != &rhs)
-		this->type = rhs.type;
+	if (this != &other)
+		this->type = other.type;
 	return (*this);
 }
 

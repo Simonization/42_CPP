@@ -13,7 +13,7 @@ public:
     // Orthodox Canonical Form
     Dog(void);
     Dog(const Dog& src);
-    Dog& operator=(const Dog& rhs);
+    Dog& operator=(const Dog& other);
     virtual ~Dog(void);
 
     // Member functions

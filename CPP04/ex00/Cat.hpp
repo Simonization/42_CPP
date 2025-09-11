@@ -1,3 +1,6 @@
+
+
+
 #ifndef CAT_HPP
 # define CAT_HPP
 
@@ -5,13 +8,14 @@
 
 class Cat : public Animal
 {
-public:
-	Cat(void);
-	Cat(const Cat& src);
-	Cat& operator=(const Cat& rhs);
-	virtual ~Cat(void);
+public :
+	Cat();
+	Cat(const Cat &src);
+	Cat &operator=(const Cat &other);
+	virtual ~Cat();
 
-	virtual void makeSound(void) const;
+	virtual void	makeSound() const;
+
 };
 
 #endif

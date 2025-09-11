@@ -29,7 +29,7 @@ protected:
 public:
 	Animal(void);
 	Animal(const Animal& src);
-	Animal& operator=(const Animal& rhs);
+	Animal& operator=(const Animal& other);
 	virtual ~Animal(void);
 
 	virtual void makeSound(void) const;
