@@ -1,7 +1,5 @@
 #include "Bureaucrat.hpp"
 
-// Orthodox Canonical Form
-
 Bureaucrat::Bureaucrat() : _name("unnamed"), _grade(150)
 {
     std::cout << "Bureaucrat default constructor called" << std::endl;
@@ -26,11 +24,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
     std::cout << "Bureaucrat assignment operator called" << std::endl;
     if (this != &other)
-    {
-        // _name is const, cannot be reassigned
-        // Only grade can be copied in assignment
         _grade = other._grade;
-    }
     return *this;
 }
 
@@ -38,8 +32,6 @@ Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructor called" << std::endl;
 }
-
-// Getters
 
 const std::string& Bureaucrat::getName() const
 {
@@ -50,8 +42,6 @@ int Bureaucrat::getGrade() const
 {
     return _grade;
 }
-
-// Grade modifiers
 
 void Bureaucrat::incrementGrade()
 {
@@ -67,8 +57,6 @@ void Bureaucrat::decrementGrade()
     _grade++;
 }
 
-// Exception implementations
-
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "Grade is too high! (Maximum grade is 1)";
@@ -79,10 +67,8 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
     return "Grade is too low! (Minimum grade is 150)";
 }
 
-// Insertion operator
-
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 {
-    os << b.getName() << ", bureaucrat grade " << b.getGrade();
+    os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
     return os;
 }

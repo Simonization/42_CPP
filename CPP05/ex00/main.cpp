@@ -100,7 +100,6 @@ int main()
         
         assigned = original;
         std::cout << "After assignment: " << assigned << std::endl;
-        std::cout << "Note: Name remains unchanged (const), only grade is copied" << std::endl;
     }
     catch (std::exception& e)
     {
