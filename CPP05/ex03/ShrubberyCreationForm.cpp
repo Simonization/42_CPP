@@ -45,10 +45,7 @@ void ShrubberyCreationForm::executeAction() const
     std::ofstream file(filename.c_str());
 
     if (!file.is_open())
-    {
-        std::cerr << "Error: Could not create file " << filename << std::endl;
-        return;
-    }
+        throw FileOpenException();
 
     file << "       _-_" << std::endl;
     file << "    /~~   ~~\\" << std::endl;
@@ -71,4 +68,9 @@ void ShrubberyCreationForm::executeAction() const
     file << "      // \\\\" << std::endl;
 
     file.close();
+}
+
+const char* ShrubberyCreationForm::FileOpenException::what() const throw()
+{
+    return "Could not open file for shrubbery creation";
 }

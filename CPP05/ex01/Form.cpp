@@ -58,6 +58,8 @@ int Form::getGradeToExecute() const
 
 void Form::beSigned(const Bureaucrat& bureaucrat)
 {
+    if (_isSigned)
+        throw FormAlreadySignedException();
     if (bureaucrat.getGrade() > _gradeToSign)
         throw GradeTooLowException();
     _isSigned = true;
@@ -71,6 +73,11 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
     return "Form grade is too low! (Minimum grade is 150)";
+}
+
+const char* Form::FormAlreadySignedException::what() const throw()
+{
+    return "Form is already signed!";
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& f)
