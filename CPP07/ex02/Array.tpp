@@ -34,7 +34,7 @@ Array<T>&	Array<T>::operator=(const Array& rhs)
 		_size = rhs._size;
 		if (_size > 0)
 		{
-			_array = new T[_size];
+			_array = new T[_size]();
 			for (unsigned int i = 0; i < _size; i++)
 				_array[i] = rhs._array[i];
 		}
