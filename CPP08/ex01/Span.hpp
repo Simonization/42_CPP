@@ -12,19 +12,16 @@ private:
 	std::vector<int>	_numbers;
 
 public:
-	// Orthodox Canonical Form
 	Span(void);
 	Span(unsigned int n);
 	Span(const Span& src);
 	Span& operator=(const Span& other);
 	~Span(void);
 
-	// Member functions
 	void addNumber(int number);
 	unsigned int shortestSpan(void) const;
 	unsigned int longestSpan(void) const;
 
-	// Range insertion (template)
 	template <typename Iterator>
 	void addNumbers(Iterator begin, Iterator end)
 	{
@@ -35,7 +32,6 @@ public:
 		}
 	}
 
-	// Nested exceptions
 	class SpanFullException : public std::exception
 	{
 	public:

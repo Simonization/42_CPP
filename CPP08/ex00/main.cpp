@@ -15,7 +15,6 @@ int main(void)
 		vec.push_back(4);
 		vec.push_back(5);
 
-		// Test: Find first element
 		try
 		{
 			std::vector<int>::iterator it = easyfind(vec, 1);
@@ -26,7 +25,6 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-		// Test: Find middle element
 		try
 		{
 			std::vector<int>::iterator it = easyfind(vec, 3);
@@ -37,7 +35,6 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-		// Test: Find last element
 		try
 		{
 			std::vector<int>::iterator it = easyfind(vec, 5);
@@ -48,7 +45,6 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-		// Test: Non-existing element
 		try
 		{
 			std::vector<int>::iterator it = easyfind(vec, 42);
@@ -69,7 +65,6 @@ int main(void)
 		lst.push_back(40);
 		lst.push_back(50);
 
-		// Test: Find element in list
 		try
 		{
 			std::list<int>::iterator it = easyfind(lst, 30);
@@ -80,7 +75,6 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-		// Test: Non-existing element in list
 		try
 		{
 			std::list<int>::iterator it = easyfind(lst, 100);
@@ -99,7 +93,6 @@ int main(void)
 		deq.push_back(200);
 		deq.push_back(300);
 
-		// Test: Find element in deque
 		try
 		{
 			std::deque<int>::iterator it = easyfind(deq, 200);
@@ -110,7 +103,6 @@ int main(void)
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-		// Test: Non-existing element in deque
 		try
 		{
 			std::deque<int>::iterator it = easyfind(deq, 999);

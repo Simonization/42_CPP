@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
@@ -19,19 +7,16 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
-	// Orthodox Canonical Form
 	MutantStack(void);
 	MutantStack(const MutantStack& src);
 	MutantStack& operator=(const MutantStack& other);
 	~MutantStack(void);
 
-	// Iterator types (from underlying container)
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 	typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
-	// Iterator functions
 	iterator begin(void);
 	iterator end(void);
 	const_iterator begin(void) const;
