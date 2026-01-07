@@ -16,7 +16,7 @@ public:
 	~WrongAnimal(void);
 
 	void makeSound(void) const;
-	std::string get_type(void) const;
+	std::string getType(void) const;
 };
 
 #endif

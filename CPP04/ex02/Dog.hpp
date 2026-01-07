@@ -7,16 +7,16 @@
 class Dog : public AAnimal
 {
 private:
-    Brain* brain;
+	Brain* brain;
 
 public:
-    Dog(void);
-    Dog(const Dog& src);
-    Dog& operator=(const Dog& other);
-    virtual ~Dog(void);
+	Dog(void);
+	Dog(const Dog& src);
+	Dog& operator=(const Dog& other);
+	virtual ~Dog(void);
 
-    virtual void makeSound(void) const;
-    Brain* getBrain(void) const;
+	virtual void makeSound(void) const;
+	Brain* getBrain(void) const;
 };
 
 #endif
