@@ -14,7 +14,7 @@ Array<T>::Array(unsigned int n) : _array(NULL), _size(n)
 }
 
 template <typename T>
-Array<T>::Array(Array const& src) : _array(NULL), _size(0)
+Array<T>::Array(const Array& src) : _array(NULL), _size(0)
 {
 	*this = src;
 }
@@ -26,7 +26,7 @@ Array<T>::~Array(void)
 }
 
 template <typename T>
-Array<T>&	Array<T>::operator=(Array const& rhs)
+Array<T>&	Array<T>::operator=(const Array& rhs)
 {
 	if (this != &rhs)
 	{
@@ -53,7 +53,7 @@ T&	Array<T>::operator[](unsigned int index)
 }
 
 template <typename T>
-T const&	Array<T>::operator[](unsigned int index) const
+const T&	Array<T>::operator[](unsigned int index) const
 {
 	if (index >= _size)
 		throw OutOfBoundsException();

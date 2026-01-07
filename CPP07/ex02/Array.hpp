@@ -14,12 +14,12 @@ private:
 public:
 	Array(void);
 	Array(unsigned int n);
-	Array(Array const& src);
+	Array(const Array& src);
 	~Array(void);
 
-	Array&	operator=(Array const& rhs);
+	Array&	operator=(const Array& rhs);
 	T&		operator[](unsigned int index);
-	T const&	operator[](unsigned int index) const;
+	const T&	operator[](unsigned int index) const;
 
 	unsigned int	size(void) const;
 

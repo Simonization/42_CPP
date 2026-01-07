@@ -5,7 +5,7 @@
 
 // Function taking const reference (for reading)
 template <typename T>
-void print(T const& elem)
+void print(const T& elem)
 {
 	std::cout << elem << " ";
 }
@@ -27,7 +27,7 @@ void toUpper(std::string& str)
 }
 
 // Simple print for const string
-void printString(std::string const& str)
+void printString(const std::string& str)
 {
 	std::cout << "[" << str << "] ";
 }

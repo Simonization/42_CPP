@@ -33,8 +33,8 @@ public:
 	int getGradeToSign() const;
 	int getGradeToExecute() const;
 
-	void beSigned(const Bureaucrat& bureaucrat);
-	void execute(Bureaucrat const& executor) const;
+    void beSigned(const Bureaucrat& bureaucrat);
+    void execute(const Bureaucrat& executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
