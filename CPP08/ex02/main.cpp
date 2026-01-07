@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "MutantStack.hpp"
 #include <iostream>
 #include <list>
@@ -121,7 +109,6 @@ static void testCopyAndAssignment(void)
 	original.push(200);
 	original.push(300);
 
-	// Test copy constructor
 	MutantStack<int> copied(original);
 	std::cout << "Original: ";
 	for (MutantStack<int>::iterator it = original.begin(); it != original.end(); ++it)
@@ -133,7 +120,6 @@ static void testCopyAndAssignment(void)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 
-	// Modify original, copied should not change
 	original.push(400);
 	std::cout << "Original after push(400): ";
 	for (MutantStack<int>::iterator it = original.begin(); it != original.end(); ++it)
@@ -145,7 +131,6 @@ static void testCopyAndAssignment(void)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 
-	// Test assignment operator
 	MutantStack<int> assigned;
 	assigned.push(999);
 	assigned = original;
@@ -182,7 +167,6 @@ static void testDifferentTypes(void)
 {
 	std::cout << "=== Different Types Test ===" << std::endl;
 
-	// Test with strings
 	MutantStack<std::string> strStack;
 	strStack.push("Hello");
 	strStack.push("World");
@@ -193,7 +177,6 @@ static void testDifferentTypes(void)
 		std::cout << *it << " ";
 	std::cout << std::endl;
 
-	// Test with doubles
 	MutantStack<double> dblStack;
 	dblStack.push(1.1);
 	dblStack.push(2.2);

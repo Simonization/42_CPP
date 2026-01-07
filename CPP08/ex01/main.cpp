@@ -10,7 +10,6 @@ static void printHeader(const std::string& title)
 	std::cout << "========== " << title << " ==========" << std::endl;
 }
 
-// Subject test - expected output: 2 and 14
 static void testSubject(void)
 {
 	printHeader("Subject Test");
@@ -25,7 +24,6 @@ static void testSubject(void)
 	std::cout << sp.longestSpan() << std::endl;
 }
 
-// Test with 10,000+ numbers
 static void testLargeSpan(void)
 {
 	printHeader("Large Span Test (10,000 numbers)");
@@ -42,12 +40,10 @@ static void testLargeSpan(void)
 	std::cout << "Longest span: " << sp.longestSpan() << std::endl;
 }
 
-// Test exceptions
 static void testExceptions(void)
 {
 	printHeader("Exception Tests");
 
-	// Test SpanFullException
 	std::cout << "Testing SpanFullException:" << std::endl;
 	try
 	{
@@ -55,7 +51,7 @@ static void testExceptions(void)
 		sp.addNumber(1);
 		sp.addNumber(2);
 		sp.addNumber(3);
-		sp.addNumber(4); // Should throw
+		sp.addNumber(4);
 		std::cout << "  ERROR: No exception thrown" << std::endl;
 	}
 	catch (const Span::SpanFullException& e)
@@ -63,12 +59,11 @@ static void testExceptions(void)
 		std::cout << "  Caught: " << e.what() << std::endl;
 	}
 
-	// Test NoSpanException with 0 elements
 	std::cout << "Testing NoSpanException (0 elements):" << std::endl;
 	try
 	{
 		Span sp(5);
-		sp.shortestSpan(); // Should throw
+		sp.shortestSpan();
 		std::cout << "  ERROR: No exception thrown" << std::endl;
 	}
 	catch (const Span::NoSpanException& e)
@@ -76,13 +71,12 @@ static void testExceptions(void)
 		std::cout << "  Caught: " << e.what() << std::endl;
 	}
 
-	// Test NoSpanException with 1 element
 	std::cout << "Testing NoSpanException (1 element):" << std::endl;
 	try
 	{
 		Span sp(5);
 		sp.addNumber(42);
-		sp.longestSpan(); // Should throw
+		sp.longestSpan();
 		std::cout << "  ERROR: No exception thrown" << std::endl;
 	}
 	catch (const Span::NoSpanException& e)
@@ -91,12 +85,10 @@ static void testExceptions(void)
 	}
 }
 
-// Test range insertion with iterators
 static void testRangeInsertion(void)
 {
 	printHeader("Range Insertion Test");
 
-	// Using vector iterators
 	std::cout << "Using vector iterators:" << std::endl;
 	std::vector<int> vec;
 	for (int i = 0; i < 5; i++)
@@ -108,7 +100,6 @@ static void testRangeInsertion(void)
 	std::cout << "  Shortest span: " << sp1.shortestSpan() << std::endl;
 	std::cout << "  Longest span: " << sp1.longestSpan() << std::endl;
 
-	// Using list iterators
 	std::cout << "Using list iterators:" << std::endl;
 	std::list<int> lst;
 	lst.push_back(100);
@@ -121,12 +112,11 @@ static void testRangeInsertion(void)
 	std::cout << "  Shortest span: " << sp2.shortestSpan() << std::endl;
 	std::cout << "  Longest span: " << sp2.longestSpan() << std::endl;
 
-	// Test range insertion that exceeds capacity
 	std::cout << "Testing range overflow:" << std::endl;
 	try
 	{
 		Span sp3(3);
-		sp3.addNumbers(vec.begin(), vec.end()); // 5 elements, capacity 3
+		sp3.addNumbers(vec.begin(), vec.end());
 		std::cout << "  ERROR: No exception thrown" << std::endl;
 	}
 	catch (const Span::SpanFullException& e)
@@ -135,7 +125,6 @@ static void testRangeInsertion(void)
 	}
 }
 
-// Test copy constructor and assignment operator
 static void testCopyAndAssignment(void)
 {
 	printHeader("Copy Constructor & Assignment Test");
@@ -145,7 +134,6 @@ static void testCopyAndAssignment(void)
 	original.addNumber(100);
 	original.addNumber(50);
 
-	// Test copy constructor
 	std::cout << "Copy constructor:" << std::endl;
 	Span copy(original);
 	std::cout << "  Original - Shortest: " << original.shortestSpan();
@@ -153,13 +141,11 @@ static void testCopyAndAssignment(void)
 	std::cout << "  Copy - Shortest: " << copy.shortestSpan();
 	std::cout << ", Longest: " << copy.longestSpan() << std::endl;
 
-	// Modify original to prove deep copy
 	original.addNumber(200);
 	std::cout << "After modifying original:" << std::endl;
 	std::cout << "  Original - Longest: " << original.longestSpan() << std::endl;
 	std::cout << "  Copy - Longest: " << copy.longestSpan() << std::endl;
 
-	// Test assignment operator
 	std::cout << "Assignment operator:" << std::endl;
 	Span assigned(10);
 	assigned.addNumber(999);
@@ -168,12 +154,10 @@ static void testCopyAndAssignment(void)
 	std::cout << ", Longest: " << assigned.longestSpan() << std::endl;
 }
 
-// Test edge cases
 static void testEdgeCases(void)
 {
 	printHeader("Edge Cases Test");
 
-	// Negative numbers
 	std::cout << "Negative numbers:" << std::endl;
 	Span sp1(5);
 	sp1.addNumber(-100);
@@ -185,7 +169,6 @@ static void testEdgeCases(void)
 	std::cout << "  Shortest span: " << sp1.shortestSpan() << std::endl;
 	std::cout << "  Longest span: " << sp1.longestSpan() << std::endl;
 
-	// Duplicate numbers
 	std::cout << "Duplicate numbers:" << std::endl;
 	Span sp2(5);
 	sp2.addNumber(42);
@@ -197,7 +180,6 @@ static void testEdgeCases(void)
 	std::cout << "  Shortest span: " << sp2.shortestSpan() << std::endl;
 	std::cout << "  Longest span: " << sp2.longestSpan() << std::endl;
 
-	// Two identical numbers (span should be 0)
 	std::cout << "Two identical numbers:" << std::endl;
 	Span sp3(2);
 	sp3.addNumber(7);
@@ -206,7 +188,6 @@ static void testEdgeCases(void)
 	std::cout << "  Shortest span: " << sp3.shortestSpan() << std::endl;
 	std::cout << "  Longest span: " << sp3.longestSpan() << std::endl;
 
-	// Exactly two numbers
 	std::cout << "Exactly two numbers:" << std::endl;
 	Span sp4(2);
 	sp4.addNumber(10);

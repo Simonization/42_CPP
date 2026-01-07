@@ -1,19 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   MutantStack.tpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: student <student@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 00:00:00 by student           #+#    #+#             */
-/*   Updated: 2024/01/01 00:00:00 by student          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MUTANTSTACK_TPP
 # define MUTANTSTACK_TPP
-
-// Orthodox Canonical Form implementations
 
 template <typename T>
 MutantStack<T>::MutantStack(void) : std::stack<T>()
@@ -37,8 +23,6 @@ template <typename T>
 MutantStack<T>::~MutantStack(void)
 {
 }
-
-// Iterator function implementations
 
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin(void)
