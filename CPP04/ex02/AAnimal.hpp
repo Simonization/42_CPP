@@ -7,16 +7,16 @@
 class AAnimal
 {
 protected:
-    std::string _type;
+	std::string _type;
 
 public:
-    AAnimal(void);
-    AAnimal(const AAnimal& src);
-    AAnimal& operator=(const AAnimal& other);
-    virtual ~AAnimal(void);
+	AAnimal(void);
+	AAnimal(const AAnimal& src);
+	AAnimal& operator=(const AAnimal& other);
+	virtual ~AAnimal(void);
 
-    virtual void makeSound(void) const = 0;
-    std::string get_type(void) const;
+	virtual void makeSound(void) const = 0;
+	std::string getType(void) const;
 };
 
 #endif

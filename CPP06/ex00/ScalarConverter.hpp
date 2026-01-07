@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
 #include <string>
 #include <iostream>
@@ -23,9 +23,6 @@
 
 class ScalarConverter
 {
-public:
-	static void convert(const std::string& literal);
-
 private:
 	// Orthodox Canonical Form - private to prevent instantiation
 	ScalarConverter();
@@ -52,6 +49,9 @@ private:
 	static void printInt(double value, bool impossible);
 	static void printFloat(double value, bool isNanOrInf);
 	static void printDouble(double value, bool isNanOrInf);
+
+public:
+	static void convert(const std::string& literal);
 };
 
 #endif

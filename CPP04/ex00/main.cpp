@@ -12,8 +12,8 @@ int main()
 	const Animal* i = new Cat();
 	
 	std::cout << std::endl;
-	std::cout << j->get_type() << " " << std::endl;
-	std::cout << i->get_type() << " " << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
 	i->makeSound();
 	j->makeSound();
@@ -30,7 +30,7 @@ int main()
 	const WrongAnimal* wrongCat = new WrongCat();
 	
 	std::cout << std::endl;
-	std::cout << wrongCat->get_type() << " " << std::endl;
+	std::cout << wrongCat->getType() << " " << std::endl;
 
 	wrongCat->makeSound();
 	wrongMeta->makeSound();
@@ -45,7 +45,7 @@ int main()
 	//copy constructor
 	Dog originalDog;
 	Dog copiedDog(originalDog);
-	std::cout << "Copied dog _type: " << copiedDog.get_type() << std::endl;
+	std::cout << "Copied dog _type: " << copiedDog.getType() << std::endl;
 	copiedDog.makeSound();
 	
 	std::cout << std::endl;
@@ -54,7 +54,7 @@ int main()
 	Cat cat1;
 	Cat cat2;
 	cat2 = cat1;
-	std::cout << "Assigned cat _type: " << cat2.get_type() << std::endl;
+	std::cout << "Assigned cat _type: " << cat2.getType() << std::endl;
 	cat2.makeSound();
 	
 	std::cout << std::endl;

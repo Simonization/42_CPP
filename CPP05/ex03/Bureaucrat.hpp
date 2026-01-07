@@ -1,5 +1,5 @@
 #ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string>
@@ -10,11 +10,11 @@ class AForm;
 class Bureaucrat
 {
 private:
-    const std::string _name;
-    int _grade;
+	const std::string _name;
+	int _grade;
 
-    static const int HIGHEST_GRADE = 1;
-    static const int LOWEST_GRADE = 150;
+	static const int HIGHEST_GRADE = 1;
+	static const int LOWEST_GRADE = 150;
 
 public:
     Bureaucrat();

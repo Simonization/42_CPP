@@ -7,6 +7,10 @@
 template <typename T>
 class Array
 {
+private:
+	T*				_array;
+	unsigned int	_size;
+
 public:
 	Array(void);
 	Array(unsigned int n);
@@ -24,10 +28,6 @@ public:
 	public:
 		virtual const char* what() const throw();
 	};
-
-private:
-	T*				_array;
-	unsigned int	_size;
 };
 
 # include "Array.tpp"
