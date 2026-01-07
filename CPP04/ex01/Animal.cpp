@@ -29,7 +29,7 @@ void Animal::makeSound(void) const
 	std::cout << "What Does the Fox Say?" << std::endl;
 }
 
-std::string Animal::get_type(void) const
+std::string Animal::getType(void) const
 {
 	return (this->_type);
 }

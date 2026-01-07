@@ -1,5 +1,5 @@
 #ifndef DOG_HPP
-#define DOG_HPP
+# define DOG_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"
@@ -15,7 +15,7 @@ public:
 	Dog& operator=(const Dog& other);
 	virtual ~Dog(void);
 
-	virtual void makeSound(void) const;;
+	virtual void makeSound(void) const;
     Brain* getBrain() const;
 };
 

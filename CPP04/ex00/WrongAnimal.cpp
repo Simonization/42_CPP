@@ -29,7 +29,7 @@ void WrongAnimal::makeSound(void) const
 	std::cout << "WrongAnimal makes wrong sound" << std::endl;
 }
 
-std::string WrongAnimal::get_type(void) const
+std::string WrongAnimal::getType(void) const
 {
 	return (this->_type);
 }
