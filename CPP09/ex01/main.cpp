@@ -14,7 +14,6 @@ int main(int argc, char** argv)
 		RPN calculator;
 		double result = calculator.evaluate(argv[1]);
 
-		// Print result as integer if it's a whole number
 		if (result == static_cast<int>(result))
 			std::cout << static_cast<int>(result) << std::endl;
 		else
