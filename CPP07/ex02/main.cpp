@@ -202,7 +202,8 @@ int main(void)
 		arr[1] = 2;
 		arr[2] = 3;
 
-		arr = arr;
+		Array<int>& ref = arr;
+		ref = arr;
 
 		std::cout << "After self-assignment: ";
 		for (unsigned int i = 0; i < arr.size(); i++)
