@@ -60,7 +60,6 @@ bool BitcoinExchange::isValidDate(const std::string& date) const
 
 	int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-	// Handle leap year
 	bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 	if (isLeapYear)
 		daysInMonth[1] = 29;
@@ -80,18 +79,15 @@ bool BitcoinExchange::isValidValue(const std::string& value, float& result) cons
 	char* endptr;
 	double val = std::strtod(trimmedValue.c_str(), &endptr);
 
-	// Check if the entire string was parsed
 	if (*endptr != '\0')
 		return false;
 
-	// Check for negative values
 	if (val < 0)
 	{
 		std::cerr << "Error: not a positive number." << std::endl;
 		return false;
 	}
 
-	// Check for values too large
 	if (val > 1000)
 	{
 		std::cerr << "Error: too large a number." << std::endl;
@@ -106,15 +102,12 @@ float BitcoinExchange::getExchangeRate(const std::string& date) const
 {
 	std::map<std::string, float>::const_iterator it = _database.lower_bound(date);
 
-	// If exact match found
 	if (it != _database.end() && it->first == date)
 		return it->second;
 
-	// If no lower date exists (date is before all entries)
 	if (it == _database.begin())
 		return -1.0f;
 
-	// Use the previous (lower) date
 	--it;
 	return it->second;
 }
@@ -126,11 +119,6 @@ void BitcoinExchange::loadDatabase(const std::string& filename)
 		throw std::runtime_error("could not open database file");
 
 	std::string line;
-	// Skip header line
-	if (std::getline(file, line))
-	{
-		// Verify it's a header (optional validation)
-	}
 
 	while (std::getline(file, line))
 	{
@@ -172,7 +160,6 @@ void BitcoinExchange::processInput(const std::string& filename)
 		if (line.empty())
 			continue;
 
-		// Skip header line
 		if (firstLine)
 		{
 			firstLine = false;
@@ -181,7 +168,6 @@ void BitcoinExchange::processInput(const std::string& filename)
 				continue;
 		}
 
-		// Find the pipe separator
 		size_t pipePos = line.find('|');
 		if (pipePos == std::string::npos)
 		{
@@ -192,19 +178,16 @@ void BitcoinExchange::processInput(const std::string& filename)
 		std::string date = trim(line.substr(0, pipePos));
 		std::string valueStr = trim(line.substr(pipePos + 1));
 
-		// Validate date
 		if (!isValidDate(date))
 		{
 			std::cerr << "Error: bad input => " << date << std::endl;
 			continue;
 		}
 
-		// Validate and parse value
 		float value;
 		if (!isValidValue(valueStr, value))
 			continue;
 
-		// Get exchange rate
 		float rate = getExchangeRate(date);
 		if (rate < 0)
 		{
@@ -212,7 +195,6 @@ void BitcoinExchange::processInput(const std::string& filename)
 			continue;
 		}
 
-		// Calculate and display result
 		float result = value * rate;
 		std::cout << date << " => " << value << " = " << result << std::endl;
 	}
